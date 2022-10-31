@@ -38,6 +38,7 @@ lantiq_setup_interfaces()
 	avm,fritz7430|\
 	buffalo,wbmr-300hpd|\
 	tplink,archer-d2|\
+	tplink,archer-d20|\
 	tplink,tdw8970|\
 	tplink,tdw8980|\
 	tplink,vr200|\
