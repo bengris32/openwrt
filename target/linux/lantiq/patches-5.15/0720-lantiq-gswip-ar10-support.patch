@@ -1,0 +1,16 @@
+--- a/drivers/net/dsa/lantiq_gswip.c
++++ b/drivers/net/dsa/lantiq_gswip.c
+@@ -2158,8 +2158,12 @@
+ 	np = dev->of_node;
+ 	switch (version) {
+ 	case GSWIP_VERSION_2_0:
++                if (!of_device_is_compatible(np, "lantiq,xrx200-gswip"))
++                        return -EINVAL;
++		break;
+ 	case GSWIP_VERSION_2_1:
+-		if (!of_device_is_compatible(np, "lantiq,xrx200-gswip"))
++		if (!of_device_is_compatible(np, "lantiq,xrx200-gswip") &&
++		    !of_device_is_compatible(np, "lantiq,xrx300-gswip"))
+ 			return -EINVAL;
+ 		break;
+ 	case GSWIP_VERSION_2_2:
